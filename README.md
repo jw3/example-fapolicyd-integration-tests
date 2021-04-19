@@ -1,6 +1,8 @@
 fapolicyd integration testing
 ===
 
+[![Build Status](https://travis-ci.com/jw3/example-fapolicyd-integration-tests.svg?branch=master)](https://travis-ci.com/jw3/example-fapolicyd-integration-tests)
+
 fanotify in a container
 
 - fapolicyd
