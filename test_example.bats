@@ -1,6 +1,7 @@
 #!/usr/bin/env bats
 
 test_name="test_example"
+test_image="ctcoss/fapolicyd"
 podman_cmd="sudo podman"
 voldir=/tmp/$test_name
 bats_test_dir="$BATS_CWD"
@@ -28,7 +29,7 @@ setup() {
                      --privileged --entrypoint='' \
                      -v "$bats_test_dir/etc/simple.rules:/etc/fapolicyd/fapolicyd.rules" \
                      -v "$voldir:/allow" -v "$voldir:/deny" \
-                     fapolicy-analyzer fapolicyd --debug
+                     "$test_image" fapolicyd --debug
 
   cp "$bats_test_dir/bin/simple.sh" "$voldir"
   cp "/bin/ls" "$voldir"
